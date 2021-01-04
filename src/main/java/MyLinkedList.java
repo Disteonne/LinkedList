@@ -1,9 +1,6 @@
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Iterator;
-import java.util.function.Consumer;
+
 
 public class MyLinkedList<E> implements ILinkedList<E> {
 
@@ -64,18 +61,31 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         if (index == 0 && size > 0) {
             addToStart(element);
         }
+        int count=0;
+        if(index>0 & index<size ){
+            for (Node<E> node=first;first!=null;){
+                if(count==index-1){
+                    Node<E> newNode=new Node<E>(element,node.nextNode,node);
+                    node.nextNode.lastNode=newNode;
+                    node.nextNode=newNode;
+                    break;
+                }
+                node=node.nextNode;
+                count++;
+            }
+        }
     }
 
     @Override
     public void clear() {
-        for (Node<E> node = first; first != null; ) {
+        for (Node<E> node = first; first != null & node!=null; ) {
             Node<E> nextNode = node.nextNode;
             node.lastNode = null;
             node.nextNode = null;
             node.element = null;
-            node = nextNode;
+            node= nextNode;
         }
-        first = null;
+        //first = null;
         size = 0;
     }
 
@@ -105,11 +115,6 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         if (index == 0 & size > 0) {
             elementResult = getFirst();
         }
-        /*
-        if(index==size-1 & size>0){
-           return  getLast();
-        }
-         */
         if (index > 0 & index < size) {
             Node<E> target = first;
             for (int i = 0; i < index; i++) {
@@ -128,10 +133,6 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         return node.getNextNode();
     }
 
-    private void removeFirst(Node<E> node) {
-
-
-    }
 
     @Override
     public E remove(int index) {
@@ -214,53 +215,20 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
 
     @Override
-    public boolean hasNext() {
-        return counter < size;
+    public Iterator<E> iterator() {
+        return new ListIterator();
     }
 
-    @Override
-    public E next() {
-        return get(counter++);
-    }
+    private class ListIterator implements Iterator<E>{
+        @Override
+        public boolean hasNext() {
+            return counter < size;
+        }
 
-    public static void main(String[] args) {
-        MyLinkedList<String> linkedList = new MyLinkedList<>();
-        linkedList.add("kek");
-        linkedList.add("new string");
-        linkedList.add("еще одна строчка");
-        linkedList.add("еще одна строчка1");
-        linkedList.add("еще одна строчка2");
-        linkedList.add("еще одна строчка3");
-        for (int i = 0; i < linkedList.size; i++) {
-            System.out.println(linkedList.get(i));
+        @Override
+        public E next() {
+            return get(counter++);
         }
-        String str = "";
-        /*
-        for (MyLinkedList<String> it = linkedList; it.hasNext(); ) {
-            String str = it.next();
-            System.out.println(str);
-        }
-         */
 
-        MyLinkedList<Integer> newLinkedList = new MyLinkedList<>(Integer.class);
-        newLinkedList.add(6);
-        newLinkedList.add(-4);
-        newLinkedList.add(21);
-        newLinkedList.add(19);
-        newLinkedList.add(-104);
-        newLinkedList.add(3);
-        /*
-        Integer[] array = newLinkedList.toArray();
-        for (Integer i : array
-        ) {
-            System.out.println(i);
-        }
-         */
-        newLinkedList.remove(5);
-        Integer[] array = newLinkedList.toArray();
-        for (Integer i : array
-        ) {
-            System.out.println(i);
-        }
     }
 }
