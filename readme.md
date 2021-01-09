@@ -40,6 +40,6 @@
     + end: hashSet "second" , linkedHashSet "first" , treeSet "third" 
     + middle: hashSet "second" , linkedHashSet "first" , treeSet "third" 
 
-###P.S.
+### P.S.
 It should be noted that regardless of the operation and time complexity of the algorithm in the future, at the initial stage, you can select a small interval where the algorithmic complexity will be equal to (blue color).
 ![markdown logo](https://webattach.mail.yandex.net/message_part_real/slide-42.jpg?exif_rotate=y&no_disposition=y&name=slide-42.jpg&sid=YWVzX3NpZDp7ImFlc0tleUlkIjoiMTc4IiwiaG1hY0tleUlkIjoiMTc4IiwiaXZCYXNlNjQiOiJOcFl5N3ViVlVXZ2R2NUs1dDNPS0hRPT0iLCJzaWRCYXNlNjQiOiJtWEw3ZnVUQklzWVBCN3NjVlJwaSs4MS94NUh5QXpway9GOVlmMndGRDl3TDBOekpYRkNWMysrT2FnNmZJVHN4YjVlRVQ4ZkdoeFZkS2RnOFhXVHh0QWlISytJZFU0Y2ZSQ2Qyb0h2WUJUdWxvc1FuS2ZMYzU2Ulg2Y01Mc1c3TyIsImhtYWNCYXNlNjQiOiJZVXBLV1l2VEFUSnZEQmovWTdvYnEzV01QUzV1b0k0TExjWE5lK0paTUpNPSJ9)
