@@ -37,25 +37,25 @@ public class CompareMaps {
         System.out.println("TreeMap add: "+(endAddTreeMap-startAddTreeMap));
         //линкед быстрее всех. сет-самый тормоз
 
+
         //-----remove el-----
         System.out.println("-------------------------");
 
         long startRemHashMap=System.nanoTime();
-        hashMap.remove(76496);
+        hashMap.remove(49999);
         long endRemHashMap=System.nanoTime();
         System.out.println("HashMap remove: "+(endRemHashMap-startRemHashMap));
 
 
         long startRemLinkedHashMap=System.nanoTime();
-        linkedHashMap.remove(76496);
+        linkedHashMap.remove(49999);
         long endRemLinkedHashMap=System.nanoTime();
         System.out.println("LinkedHashMap remove: "+(endRemLinkedHashMap-startRemLinkedHashMap));
 
         long startRemTreeMap=System.nanoTime();
-        treeMap.remove(76496);
+        treeMap.remove(49999);
         long endRemTreeMap=System.nanoTime();
         System.out.println("TreeMap remove: "+(endRemTreeMap-startRemTreeMap));
-        //линкед быстрее всех. сет-самый тормоз
 
     }
 }
