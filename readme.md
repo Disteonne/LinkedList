@@ -36,9 +36,9 @@
     + 10000 elem: hashMap "first" , linkedHashMap "second" , treeMap "third" 
     + 100000 elem: hashMap "second" , linkedHashMap "first" , treeMap "third"
 - Remove 1 element (100 000 el):
-    + start: hashSet "second" , linkedHashSet "first" , treeSet "third" 
-    + end: hashSet "second" , linkedHashSet "first" , treeSet "third" 
-    + middle: hashSet "second" , linkedHashSet "first" , treeSet "third" 
+    + start: hashMap "second" , linkedHashMap "first" , treeMap "third" 
+    + end: hashMap "second" , linkedHashMap "first" , treeMap "third" 
+    + middle: hashMap "second" , linkedHashMap "first" , treeMap "third" 
 
 ### P.S.
 It should be noted that regardless of the operation and time complexity of the algorithm in the future, at the initial stage, you can select a small interval where the algorithmic complexity will be equal to (blue color).

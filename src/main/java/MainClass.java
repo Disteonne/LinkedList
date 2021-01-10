@@ -121,6 +121,14 @@ public class MainClass {
             System.out.println("Java List clear method: "+(endTimeListClear-startTimeListClear));
 
 
+            //-----toString-----
+            System.out.println("-------------------");
+            MyLinkedList<Integer> listForToString=new MyLinkedList<>();
+            for (int i = 0; i < 6; i++) {
+                    listForToString.add(i);
+            }
+            System.out.println(listForToString.toString());
+
         }
 
 }

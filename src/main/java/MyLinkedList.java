@@ -231,4 +231,21 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         }
 
     }
+
+    @Override
+    public String toString() {
+        Iterator<E> iterator=iterator();
+        if(! iterator.hasNext()){
+            return "list is empty";
+        }
+
+        StringBuilder stringBuilder=new StringBuilder("{");
+        while (true){
+            stringBuilder.append(iterator.next());
+            if(!iterator.hasNext()){
+                return stringBuilder.append("}").toString();
+            }
+            stringBuilder.append(", ");
+        }
+    }
 }
