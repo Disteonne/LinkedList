@@ -21,4 +21,6 @@ public interface ILinkedList<E> extends Iterable<E> {
 
      String toString();
 
+     int indexOf(E element);
+
 }

@@ -11,9 +11,10 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
     private E[] elements;
     private Class<?> aClass;
-
-
     private int counter = 0;
+    private int countOfIterator=0;
+
+
 
     public MyLinkedList() {
     }
@@ -220,6 +221,10 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     }
 
     private class ListIterator implements Iterator<E>{
+       // private int temp=0;
+        //private Node<E> element=first;
+
+
         @Override
         public boolean hasNext() {
             return counter < size;
@@ -227,9 +232,9 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
         @Override
         public E next() {
+
             return get(counter++);
         }
-
     }
 
     @Override
@@ -243,9 +248,23 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         while (true){
             stringBuilder.append(iterator.next());
             if(!iterator.hasNext()){
+                counter=0;
                 return stringBuilder.append("}").toString();
             }
             stringBuilder.append(", ");
         }
+    }
+
+    @Override
+    public int indexOf(E element) {
+        int index=0;
+        while (iterator().hasNext()){
+            E elOfNode=iterator().next();
+            if(elOfNode.equals(element)){
+                return index;
+            }
+            index++;
+        }
+        return -1;
     }
 }

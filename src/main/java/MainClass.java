@@ -128,7 +128,14 @@ public class MainClass {
                     listForToString.add(i);
             }
             System.out.println(listForToString.toString());
+            System.out.println(listForToString.indexOf(3));//
 
+            //-----indexOf-----
+            System.out.println("-------------------");
+            MyLinkedList<String> listForIndexOf=new MyLinkedList<>();
+            listForIndexOf.add("Happy");
+            listForIndexOf.add("Sad");
+            System.out.println(listForIndexOf.indexOf("Happy"));//2
         }
 
 }
