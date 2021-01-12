@@ -17,7 +17,8 @@
     + middle: arraylist "+" , linkedlist "-" 
     
   For example:
-  ![markdown logo](https://sun9-29.userapi.com/impg/33h-zL6G896t7jCVBIk5OEIlpPrz433-E3TRbQ/CsfPU9SfdE0.jpg?size=537x348&quality=96&proxy=1&sign=eb59930d3b029961965db35ef7021b65&type=album)
+  
+ ![markdown logo](https://sun9-29.userapi.com/impg/33h-zL6G896t7jCVBIk5OEIlpPrz433-E3TRbQ/CsfPU9SfdE0.jpg?size=537x348&quality=96&proxy=1&sign=eb59930d3b029961965db35ef7021b65&type=album)
     
 ### HashSet, LinkedHashSet and TreeSet
 **"first" - faster , "second" - slower then first, "third"-the slowest**
