@@ -33,7 +33,8 @@
     + middle: hashSet "second" , linkedHashSet "first" , treeSet "third" 
  
 For example:
-   ![markdown logo](https://sun9-76.userapi.com/impg/Eu6VPDUDjEDnv62FwLaDHC_PU71Hbtt5HaaKyQ/H7n6lB-y3M8.jpg?size=481x288&quality=96&proxy=1&sign=5f70afb927f7f855f58bd8c9be049076&type=album)
+
+ ![markdown logo](https://sun9-76.userapi.com/impg/Eu6VPDUDjEDnv62FwLaDHC_PU71Hbtt5HaaKyQ/H7n6lB-y3M8.jpg?size=481x288&quality=96&proxy=1&sign=5f70afb927f7f855f58bd8c9be049076&type=album)
 
 ### HashMap, LinkedHashMap and TreeMap  
 **"first" - faster , "second" - slower then first, "third"-the slowest**
@@ -48,7 +49,8 @@ For example:
     + middle: hashMap "second" , linkedHashMap "first" , treeMap "third" 
 
 For example:
-   ![markdown logo](https://sun9-24.userapi.com/impg/akM_1GPLiwHiQsjTc2g70IokA43TEvDD-Mes6A/roatbi6YLyo.jpg?size=480x288&quality=96&proxy=1&sign=424d019b3b8b0e83fd5cfb7649270a46&type=album)
+
+ ![markdown logo](https://sun9-24.userapi.com/impg/akM_1GPLiwHiQsjTc2g70IokA43TEvDD-Mes6A/roatbi6YLyo.jpg?size=480x288&quality=96&proxy=1&sign=424d019b3b8b0e83fd5cfb7649270a46&type=album)
 #### Conclusion 
 The selection of a collection depends on the data set and the goals you set.
 
@@ -56,7 +58,8 @@ The selection of a collection depends on the data set and the goals you set.
  - In fact, the time values vary: somewhere its implementation is faster, and somewhere-not.
  
 For example:
-   ![markdown logo](https://sun9-16.userapi.com/impg/HZSu4tbCOx6IZyLRG3LlpZoFlwmdu4SQGY5AvA/zytXH5Xz1_I.jpg?size=481x289&quality=96&proxy=1&sign=a25e5901ce4cf1f8cc1884ff8610770f&type=album)
+
+ ![markdown logo](https://sun9-16.userapi.com/impg/HZSu4tbCOx6IZyLRG3LlpZoFlwmdu4SQGY5AvA/zytXH5Xz1_I.jpg?size=481x289&quality=96&proxy=1&sign=a25e5901ce4cf1f8cc1884ff8610770f&type=album)
 
 ### P.S.
 It should be noted that regardless of the operation and time complexity of the algorithm in the future, at the initial stage, you can select a small interval where the algorithmic complexity will be equal to (blue color).
