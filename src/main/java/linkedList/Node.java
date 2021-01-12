@@ -1,3 +1,4 @@
+package linkedList;
 
 public class Node<E> {
     protected E element;

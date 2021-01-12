@@ -1,3 +1,5 @@
+package linkedList.tests;
+
 public interface Tests {
 
      void clearTemps();

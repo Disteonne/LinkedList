@@ -1,8 +1,6 @@
 package compareCollections;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class CompareHashSetLinkSetTreeSet {
     public static void main(String[] args) {
@@ -11,48 +9,24 @@ public class CompareHashSetLinkSetTreeSet {
         LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
         TreeSet<Integer> treeSet = new TreeSet<>();
 
-        //-----add-----
-        System.out.println("-------------------------");
+        //  ADD
+        System.out.println("HashSet: "+add(hashSet,100000)+",LinkedHashSet: "+add(linkedHashSet,100000)+",TreeSet: "+add(treeSet,100000));
+        //  REM
+        System.out.println("HashSet: "+rem(hashSet,0)+",LinkedHashSet: "+rem(linkedHashSet,0)+",TreeSet: "+rem(treeSet,0));
 
-        long startAddTimeHashSet = System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            hashSet.add(i);
-        }
-        long endAddTimeHashSet = System.nanoTime();
-        System.out.println("HashSet add: " + (endAddTimeHashSet - startAddTimeHashSet));
+    }
 
-        long startAddTimeLinkedHashSet = System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            linkedHashSet.add(i);
-        }
-        long endAddTimeLinkedHashSet = System.nanoTime();
-        System.out.println("LinkedHashSet add: " + (endAddTimeLinkedHashSet - startAddTimeLinkedHashSet));
+    public static long add(Set<Integer> set, int size) {
+        long startTimeOperation = System.nanoTime();
+            for (int i = 0; i < size; i++) {
+                set.add(i);
+            }
+        return System.nanoTime() - startTimeOperation;
+    }
 
-        long startAddTimeTreeSet = System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            treeSet.add(i);
-        }
-        long endAddTimeTreeSet = System.nanoTime();
-        System.out.println("TreeSet add: " + (endAddTimeTreeSet - startAddTimeTreeSet));
-
-
-        //-----remove element-----
-        System.out.println("-------------------------");
-
-        long startRemTimeHashSet = System.nanoTime();
-        hashSet.remove(49999);
-        long endRemTimeHashSet = System.nanoTime();
-        System.out.println("HashSet remove el: " + (endRemTimeHashSet - startRemTimeHashSet));
-
-        long startRemTimeLinkedHashSet = System.nanoTime();
-        linkedHashSet.remove(49999);
-        long endRemTimeLinkedHashSet = System.nanoTime();
-        System.out.println("LinkedHashSet remove el: " + (endRemTimeLinkedHashSet - startRemTimeLinkedHashSet));
-
-        long startRemTimeTreeSet = System.nanoTime();
-        treeSet.remove(49999);
-        long endRemTimeTreeSet = System.nanoTime();
-        System.out.println("TreeSet remove el: " + (endRemTimeTreeSet - startRemTimeTreeSet));
-
+    public static long rem(Set<Integer> set, int index) {
+        long startTimeOperation = System.nanoTime();
+            set.remove(index);
+        return System.nanoTime() - startTimeOperation;
     }
 }

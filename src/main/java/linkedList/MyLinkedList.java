@@ -1,8 +1,12 @@
+package linkedList;
+
+import linkedList.ILinkedList;
+
 import java.lang.reflect.Array;
 import java.util.Iterator;
 
 
-public class MyLinkedList<E> implements ILinkedList<E> {
+public class MyLinkedList<E> implements ILinkedList<E>, java.lang.Iterable<E> {
 
     private int size;
     private Node<E> first;
@@ -59,22 +63,25 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         if (index == 0 && size == 0 | index == size) {
             addToEnd(element);
         }
-        if (index == 0 && size > 0) {
+        if(index == 0 && size > 0)
+        {
             addToStart(element);
         }
-        int count=0;
-        if(index>0 & index<size ){
-            for (Node<E> node=first;first!=null;){
-                if(count==index-1){
-                    Node<E> newNode=new Node<E>(element,node.nextNode,node);
-                    node.nextNode.lastNode=newNode;
-                    node.nextNode=newNode;
-                    break;
+            int count = 0;
+            if (index > 0 & index - 1 < size) {
+                for (Node<E> node = first; first != null; ) {
+                    if (count == index - 1) {
+                        Node<E> newNode = new Node<E>(element, node.nextNode, node);
+                        node.nextNode.lastNode = newNode;
+                        node.nextNode = newNode;
+                        size++;
+                        break;
+                    }
+                    node = node.nextNode;
+                    count++;
                 }
-                node=node.nextNode;
-                count++;
             }
-        }
+
     }
 
     @Override

@@ -2,56 +2,42 @@ package compareCollections;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class CompareArrayListLinkedList {
+
     public static void main(String[] args) {
-        ArrayList<Integer> arrayList=new ArrayList<>();
-        LinkedList<Integer> linkedList=new LinkedList<>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        LinkedList<Integer> linkedList = new LinkedList<>();
 
-        System.out.println("-------------------------");
-        long startAddTimeArrList=System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            arrayList.add(i);
-        }
-        long endAddTimeArrList=System.nanoTime();
-        System.out.println("ArrayList add method: "+(endAddTimeArrList-startAddTimeArrList));
+        //      ADD
+        System.out.println("ArrayList: "+add(arrayList,100000,null)+", LinkedList: "+add(linkedList,10,null));
 
-        long startAddTimeLinList=System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-           linkedList.add(i);
-        }
-        long endAddTimeLinList=System.nanoTime();
-        System.out.println("LinkedList add method: "+(endAddTimeLinList-startAddTimeLinList));
-        //arrayList faster
+        System.out.println("ArrayList: "+add(arrayList,100000,9999)+", LinkedList: "+add(linkedList,10,9999));
 
-
-        System.out.println("-------------------------");
-        long startAddElTimeArrList=System.nanoTime();
-        arrayList.add(49999,999999);
-        //arrayList.add(49742,999999);
-        long endAddElTimeArrList=System.nanoTime();
-        System.out.println("ArrayList ins el method: "+(endAddElTimeArrList-startAddElTimeArrList));
-
-        long startAddElTimeLinList=System.nanoTime();
-        linkedList.add(49999,999999);
-        //linkedList.add(49742,999999);
-        long endAddElTimeLinList=System.nanoTime();
-        System.out.println("LinkedList ins el method: "+(endAddElTimeLinList-startAddElTimeLinList));
-        //при маленьких индексах -линк быстрее. при средних-арр лист быстрее
-
-        System.out.println("-------------------------");
-        long startRemElTimeArrList=System.nanoTime();
-        arrayList.remove(49999);
-        long endRemElTimeArrList=System.nanoTime();
-        System.out.println("ArrayList remove el method: "+(endRemElTimeArrList-startRemElTimeArrList));
-
-        long startRemElTimeLinList=System.nanoTime();
-        linkedList.remove(49999);
-        long endRemElTimeLinList=System.nanoTime();
-        System.out.println("LinkedList remove el method: "+(endRemElTimeLinList-startRemElTimeLinList));
-        //результат аналогичен вставке эл-та
-
-
-
+        //      REM
+        System.out.println("ArrayList: "+rem(arrayList,0,null)+", LinkedList: "+rem(linkedList,0,null));
     }
+
+    public static long add(List<Integer> list, int size, Integer element) {
+        long startTimeOperation = System.nanoTime();
+        if (element==null) {
+            for (int i = 0; i < size; i++) {
+                list.add(i);
+            }
+        } else{
+            list.add(element);
+        }
+        return System.nanoTime() - startTimeOperation;
+    }
+
+    public static long rem(List<Integer> list, int index,Integer element) {
+        long startTimeOperation = System.nanoTime();
+        if(element==null) {
+            list.remove(index);
+        }else
+            list.remove(element);
+        return System.nanoTime() - startTimeOperation;
+    }
+
 }

@@ -1,16 +1,20 @@
-import org.w3c.dom.Text;
+package linkedList.tests;
+
+import linkedList.tests.Tests;
 
 import java.util.LinkedList;
 
-public class TimeOfMyLinkedList implements Tests {
+public class TimeOfJavaLinkedList implements Tests {
 
-    private  MyLinkedList<String> list=new MyLinkedList<>();
+    private LinkedList<String> javaList=new LinkedList<>();
+
     private  long startOperationTime=0;
     private  long endOperationTime=0;
 
-    public MyLinkedList<String> getList() {
-        return list;
+    public LinkedList<String> getJavaList() {
+        return javaList;
     }
+
     @Override
     public void clearTemps(){
         startOperationTime=0;
@@ -24,37 +28,38 @@ public class TimeOfMyLinkedList implements Tests {
     public  long addOrRemoveAllElementsTime(int size,String operation) throws Exception {
         check(operation);
         clearTemps();
-        startOperationTime=System.currentTimeMillis();
+        startOperationTime=System.nanoTime();
         if(operation=="+") {
             String addAllEl = "";
             for (int i = 0; i < size; i++) {
-                list.add(addAllEl + i + " ");
+                javaList.add(addAllEl + i + " ");
             }
         }else {
             for (int i = 0; i < size; i++) {
-                list.remove(i);
+                javaList.remove(i);
             }
         }
-        endOperationTime=System.currentTimeMillis();
+        endOperationTime=System.nanoTime();
         return endOperationTime-startOperationTime;
     }
-
     /*
         '+' - insert
         '-' - remove
      */
     @Override
-    public  long insertOrRemoveOneEl(int index,String element,String operation) throws Exception {
+    public long insertOrRemoveOneEl(int index,String element,String operation) throws Exception {
         check(operation);
         clearTemps();
-        startOperationTime=System.currentTimeMillis();
+        startOperationTime=System.nanoTime();
         if (operation == "+") {
-            list.add(index,element);
+            javaList.add(index,element);
         }else {
-            list.remove(index);
+            javaList.remove(index);
         }
-        endOperationTime=System.currentTimeMillis();
+        endOperationTime=System.nanoTime();
         return endOperationTime-startOperationTime;
     }
+
+
 
 }
