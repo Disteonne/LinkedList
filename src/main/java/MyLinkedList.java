@@ -168,8 +168,6 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         } else {
             nextN.lastNode = lastN;
             if(node.lastNode!=null) {
-
-                //node.nextNode = null;
                 lastN.nextNode = nextN;
             }
         }
@@ -221,10 +219,6 @@ public class MyLinkedList<E> implements ILinkedList<E> {
     }
 
     private class ListIterator implements Iterator<E>{
-       // private int temp=0;
-        //private Node<E> element=first;
-
-
         @Override
         public boolean hasNext() {
             return counter < size;
@@ -267,4 +261,6 @@ public class MyLinkedList<E> implements ILinkedList<E> {
         }
         return -1;
     }
+
+
 }
