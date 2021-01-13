@@ -3,7 +3,7 @@ package linkedList;
 import java.util.Iterator;
 import java.util.function.Consumer;
 
-public interface ILinkedList<E> extends Iterable<E> {
+public interface ILinkedList<E>  extends Iterable<E> {
 
      void add(E element);
 

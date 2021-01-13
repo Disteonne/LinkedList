@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
 import java.util.Iterator;
 
 
-public class MyLinkedList<E> implements ILinkedList<E>, java.lang.Iterable<E> {
+public class MyLinkedList<E> implements ILinkedList<E> {
 
     private int size;
     private Node<E> first;
