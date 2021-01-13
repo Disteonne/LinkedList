@@ -222,10 +222,10 @@ public class MyLinkedList<E> implements ILinkedList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new ListIterator();
+        return new MyListIterator();
     }
 
-    private class ListIterator implements Iterator<E>{
+    private class MyListIterator implements Iterator<E>{
         @Override
         public boolean hasNext() {
             return counter < size;
